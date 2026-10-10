@@ -150,3 +150,11 @@ body.client .client-only { display: block; }
 .static-note { display: none; margin-top: 10px; padding: 10px 14px; border-radius: 12px; background: var(--on); border: 1px solid var(--line); font-size: 14px; }
 body.static .static-note { display: block; }
 body.static #openFolder { display: none; }
+
+@media (max-width: 430px) {
+  .top { padding: 10px 12px; gap: 6px; }
+  .brand { font-size: 13px; gap: 7px; }
+  .top-actions { gap: 3px; }
+  .top-actions button { padding: 6px 7px; font-size: 12.5px; }
+  .top-actions button.icon { width: 30px; }
+}
