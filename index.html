@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Монтажная студия</title>
+<meta name="description" content="Собери стиль монтажа рилза в пару нажатий: рецепты, 150+ приёмов, моушн-блоки с превью. План уходит монтажёру одним сообщением">
+<meta name="theme-color" content="#16161a">
+<meta property="og:title" content="Монтажная студия">
+<meta property="og:description" content="Выбери рецепт, поправь приёмы и получи готовое ТЗ на монтаж рилза">
+<meta property="og:image" content="static/og.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="static/icon-192.png">
+<link rel="stylesheet" href="static/styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22%3E%3Ccircle cx=%228%22 cy=%228%22 r=%226%22 fill=%22%23F5B84A%22/%3E%3C/svg%3E">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="dot"></span>Монтажная студия</div>
+  <div class="top-actions">
+    <button class="ghost" id="openPlans" title="Открыть план, который сохранял раньше">Мои планы</button>
+    <button class="ghost" id="resetAll" title="Очистить всё и начать заново">Новый план</button>
+    <button class="ghost icon" id="theme" title="Тёмная или светлая тема">◐</button>
+  </div>
+</header>
+
+<div class="layout">
+  <main id="main">
+    <section class="intro">
+      <h1>Собери монтаж в пару нажатий</h1>
+      <p>Выбери рецепт, поправь что хочешь и нажми «Готово». Куда ставить каждый приём, Claude решит сам по смыслу твоей речи</p>
+      <p class="static-note">Это облачная версия. Видео никуда не загружается: план копируется одним сообщением, и ты вставляешь его в чат Claude на своём ПК</p>
+    </section>
+
+    <section class="step" id="step-recipes">
+      <div class="step-head"><span class="num">1</span><div><h2>Рецепт в один клик</h2><p>Заполняет все шаги ниже. Любую галочку потом можно поменять</p></div></div>
+      <div class="grid recipes" id="recipes"></div>
+    </section>
+
+    <section class="step" id="step-project">
+      <div class="step-head"><span class="num">2</span><div><h2>Проект</h2><p>Что монтируем и для кого</p></div></div>
+      <div class="field">
+        <label>Название</label>
+        <input id="pName" placeholder="Например: Ты боишься потерять контроль">
+      </div>
+      <div class="field">
+        <label>Для кого ролик</label>
+        <div class="seg" id="pType">
+          <button data-v="own" class="on">Свой рилз</button>
+          <button data-v="client">Заказ клиента</button>
+        </div>
+      </div>
+      <div class="field">
+        <label>Исходное видео</label>
+        <div class="row">
+          <button class="primary" id="pickVideo">Выбрать видео</button>
+          <input id="pVideo" placeholder="или вставь путь к файлу">
+        </div>
+        <div class="meta" id="videoInfo"></div>
+      </div>
+      <div class="field">
+        <label>Референс <span class="opt">необязательно</span></label>
+        <div class="row">
+          <button class="ghost" id="pickRef">Выбрать файл</button>
+          <input id="pRef" placeholder="или ссылка на ролик-пример">
+        </div>
+        <div class="hint">Если есть реф, беру из него темп, цвет, музыку и длину точно, а не «похоже»</div>
+      </div>
+      <div class="client-only">
+        <div class="field">
+          <label>ТЗ и переписка клиента</label>
+          <textarea id="pBrief" rows="5" placeholder="Вставь всю переписку целиком, старые пожелания тоже требования"></textarea>
+        </div>
+        <label class="switch"><input type="checkbox" id="pWatermark" checked><span></span>Водяной знак сеткой до оплаты <em>чистый файл отдам после оплаты</em></label>
+      </div>
+    </section>
+
+    <div id="steps"></div>
+
+    <section class="step" id="step-done">
+      <div class="step-head"><span class="num">✓</span><div><h2>Готово</h2><p>Сохраню план в папку проекта и скопирую фразу для чата</p></div></div>
+      <div class="field">
+        <label>Пожелания своими словами <span class="opt">необязательно</span></label>
+        <textarea id="pNotes" rows="3" placeholder="Например: в конце хочу паузу и тишину, музыку поспокойнее"></textarea>
+      </div>
+      <div class="row wrap">
+        <button class="primary big" id="save">Готово, сохранить план</button>
+        <button class="ghost" id="saveRecipe">Сохранить как мой рецепт</button>
+      </div>
+      <div class="result" id="result" hidden></div>
+    </section>
+  </main>
+
+  <aside class="summary">
+    <div class="sum-card">
+      <h3>Что получится</h3>
+      <div id="summary"></div>
+      <button class="primary wide" id="save2">Готово</button>
+    </div>
+  </aside>
+</div>
+
+<div class="modal" id="plansModal" hidden>
+  <div class="modal-box">
+    <div class="modal-head"><h3>Мои планы</h3><button class="ghost icon" data-close>✕</button></div>
+    <div id="plansList"></div>
+  </div>
+</div>
+<div class="toast" id="toast" hidden></div>
+<input type="file" id="fileVideo" accept="video/*" hidden>
+<input type="file" id="fileRef" accept="video/*" hidden>
+<script src="static/app.js"></script>
+</body>
+</html>

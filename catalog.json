@@ -1,0 +1,2558 @@
+{
+ "steps": [
+  {
+   "id": "rhythm",
+   "num": 3,
+   "title": "Ритм и монтаж",
+   "hint": "Как режем и как двигается камера. Отсюда рождается драйв",
+   "groups": [
+    {
+     "id": "pauses",
+     "title": "Паузы в речи",
+     "hint": "Мёртвые паузы убивают досмотр. Чем плотнее, тем бодрее",
+     "type": "single",
+     "options": [
+      {
+       "id": "keep",
+       "name": "Не трогать",
+       "does": "Речь идёт как снята, паузы остаются",
+       "when": "Медитативные ролики, где тишина работает"
+      },
+      {
+       "id": "soft",
+       "name": "Мягко",
+       "does": "Режу паузы длиннее 1 секунды",
+       "when": "Спокойный эксперт, доверительный тон"
+      },
+      {
+       "id": "tight",
+       "name": "Плотно",
+       "does": "Режу паузы длиннее 0,6 секунды. Так сделан «Нет плохих людей»",
+       "when": "Почти всегда для рилзов"
+      },
+      {
+       "id": "jump",
+       "name": "Очень плотно, джамп-каты",
+       "does": "Режу всё длиннее 0,35 секунды, речь летит без вдохов",
+       "when": "Хайп, быстрые советы, молодая аудитория"
+      }
+     ],
+     "default": "tight",
+     "advanced": false
+    },
+    {
+     "id": "framing",
+     "title": "Смена крупности",
+     "hint": "Один дубль начинает выглядеть как съёмка на две камеры",
+     "type": "single",
+     "options": [
+      {
+       "id": "none",
+       "name": "Не менять",
+       "does": "Один план весь ролик",
+       "when": "Когда кадр и так красивый и спокойный"
+      },
+      {
+       "id": "cuts",
+       "name": "На каждой склейке",
+       "does": "После каждого вырезанного куска кадр чуть ближе или дальше, склейку не видно",
+       "when": "Рилзы с вырезанными паузами",
+       "preview": "/static/previews/framing.mp4"
+      },
+      {
+       "id": "accents",
+       "name": "Только на акцентах",
+       "does": "Приближаю на самых сильных фразах",
+       "when": "Экспертный спокойный тон"
+      }
+     ],
+     "default": "cuts",
+     "advanced": false
+    },
+    {
+     "id": "push",
+     "title": "Движение камеры",
+     "hint": "Плавные наезды держат внимание. Резкие зумы на каждой фразе выглядят дёшево",
+     "type": "single",
+     "options": [
+      {
+       "id": "still",
+       "name": "Без движения",
+       "does": "Камера стоит",
+       "when": "Документалка, интервью"
+      },
+      {
+       "id": "slow",
+       "name": "Медленный наезд по смыслу",
+       "does": "Камера тихо подъезжает к лицу, когда мысль набирает силу",
+       "when": "Глубокие, личные темы"
+      },
+      {
+       "id": "punch",
+       "name": "Панч-ины на ключевых словах",
+       "does": "Короткий быстрый наезд в момент сильного слова",
+       "when": "Драйв, хайп"
+      },
+      {
+       "id": "mix",
+       "name": "Микс (как в «Квесте»)",
+       "does": "Медленные наезды плюс 2-3 панча на главных словах",
+       "when": "Универсально для рилзов",
+       "preview": "/static/previews/smash.mp4"
+      }
+     ],
+     "default": "mix",
+     "advanced": false
+    },
+    {
+     "id": "tempo",
+     "title": "Общий темп",
+     "hint": "Задаёт, как часто что-то меняется в кадре",
+     "type": "single",
+     "options": [
+      {
+       "id": "calm",
+       "name": "Спокойно",
+       "does": "Новое событие раз в 6-8 секунд, много воздуха",
+       "when": "Психология, медитации, люкс"
+      },
+      {
+       "id": "even",
+       "name": "Ровно",
+       "does": "Новое событие раз в 4-5 секунд",
+       "when": "Эксперт, обучение"
+      },
+      {
+       "id": "drive",
+       "name": "Драйв",
+       "does": "Новое событие каждые 3-4 секунды, зритель не успевает уйти",
+       "when": "Квест, хайп, вирусный формат"
+      }
+     ],
+     "default": "drive",
+     "advanced": false
+    },
+    {
+     "id": "length",
+     "title": "Длина ролика",
+     "hint": "Длиннее почти всегда скучнее",
+     "type": "single",
+     "options": [
+      {
+       "id": "asis",
+       "name": "Как получится после вырезки",
+       "does": "Не подгоняю под цифру"
+      },
+      {
+       "id": "ref",
+       "name": "Не длиннее рефа",
+       "does": "Подрезаю до длины референса",
+       "when": "Заказы с рефом"
+      },
+      {
+       "id": "30",
+       "name": "До 30 секунд",
+       "does": "Оставляю только сильнейшее",
+       "when": "Охват, холодная аудитория"
+      },
+      {
+       "id": "45",
+       "name": "До 45 секунд",
+       "does": "Баланс смысла и досмотра"
+      },
+      {
+       "id": "60",
+       "name": "До 60 секунд",
+       "does": "Влезает в Shorts",
+       "when": "Когда мысль длинная"
+      },
+      {
+       "id": "90",
+       "name": "До 90 секунд",
+       "does": "Максимум для Reels с хорошим досмотром",
+       "when": "Для своей тёплой аудитории"
+      }
+     ],
+     "default": "asis",
+     "advanced": true
+    },
+    {
+     "id": "transitions",
+     "title": "Переходы",
+     "hint": "Чем склеиваются смысловые блоки. Можно несколько",
+     "type": "multi",
+     "options": [
+      {
+       "id": "smooth",
+       "name": "Плавный",
+       "does": "Мягкое растворение одного в другое",
+       "when": "Спокойные ролики"
+      },
+      {
+       "id": "whip",
+       "name": "Вжух (whip-pan)",
+       "does": "Резкий смаз с размытием, как будто камеру дёрнули",
+       "when": "Смена темы, энергия",
+       "preview": "/static/previews/mb/D2-motion-blur-whip-pan.mp4",
+       "src": "motion-blocks D2"
+      },
+      {
+       "id": "smash",
+       "name": "Смэш-кат на бит",
+       "does": "Резкая склейка точно в удар музыки со вспышкой и тряской",
+       "when": "Поворот сюжета, «а теперь правда»",
+       "preview": "/static/previews/smash.mp4",
+       "src": "Квест"
+      },
+      {
+       "id": "flash",
+       "name": "Вспышка",
+       "does": "Короткая светлая вспышка между планами",
+       "when": "Озарение, «и тут я понял»"
+      },
+      {
+       "id": "swap",
+       "name": "Карточка падает, другая влетает",
+       "does": "Старая плашка уходит вниз, новая падает сверху с отскоком",
+       "when": "Смена тезиса",
+       "preview": "/static/previews/mb/D4-object-swap-out-drop.mp4",
+       "src": "motion-blocks D4"
+      },
+      {
+       "id": "wipe",
+       "name": "Шторка",
+       "does": "Цветная панель проезжает и открывает новое",
+       "when": "Главы, бодрый стиль",
+       "preview": "/static/previews/mb/D6-hard-coral-wipe.mp4",
+       "src": "motion-blocks D6"
+      },
+      {
+       "id": "dive",
+       "name": "Нырок камеры",
+       "does": "Камера влетает в элемент и выходит в новую сцену",
+       "when": "Переход к деталям",
+       "preview": "/static/previews/mb/D1-camera-dive-focal.mp4",
+       "src": "motion-blocks D1"
+      },
+      {
+       "id": "cone",
+       "name": "Воронка",
+       "does": "Сцена схлопывается в воронку и раскрывается новая",
+       "when": "Вывод, «всё сводится к одному»",
+       "preview": "/static/previews/mb/D7-funnel-cone-transition.mp4",
+       "src": "motion-blocks D7"
+      }
+     ],
+     "default": [
+      "whip",
+      "smash"
+     ],
+     "advanced": false
+    }
+   ]
+  },
+  {
+   "id": "hook",
+   "num": 4,
+   "title": "Хук: первые 3 секунды",
+   "hint": "Решают, досмотрят или пролистают. Самое сильное сразу, без заставок",
+   "groups": [
+    {
+     "id": "hook",
+     "title": "Главный приём хука",
+     "hint": "Один, самый сильный",
+     "type": "single",
+     "options": [
+      {
+       "id": "behind",
+       "name": "Слова за головой",
+       "does": "Крупный заголовок стоит в небе, а ты вырезан маской и стоишь перед ним. Выглядит дорого",
+       "when": "Почти всегда, если за тобой есть небо или стена",
+       "preview": "/static/previews/hook.mp4",
+       "src": "Квест + remove-background"
+      },
+      {
+       "id": "above",
+       "name": "Крупный текст над головой",
+       "does": "Большой заголовок в стеклянной плашке над головой, лицо открыто",
+       "when": "Когда фон пёстрый и маска не нужна"
+      },
+      {
+       "id": "freeze",
+       "name": "Стоп-кадр с ударом",
+       "does": "Первый кадр замирает на долю секунды под удар звука, потом всё оживает",
+       "when": "Эмоциональное лицо в первом кадре"
+      },
+      {
+       "id": "question",
+       "name": "Вопрос в лоб",
+       "does": "Хук задаёт вопрос, на который зритель хочет ответ",
+       "when": "Когда в речи есть вопрос"
+      },
+      {
+       "id": "number",
+       "name": "Цифра или счётчик",
+       "does": "Цифры бегут к главному числу",
+       "when": "Есть число в речи",
+       "preview": "/static/previews/counter.mp4"
+      },
+      {
+       "id": "strongest",
+       "name": "Перестановка: сильнейшая фраза вперёд",
+       "does": "Беру самую цепкую фразу из середины и ставлю её первой",
+       "when": "Когда начало речи вялое"
+      },
+      {
+       "id": "iconic",
+       "name": "Символ-хук",
+       "does": "Одна большая иконка эффектно влетает и задаёт тему",
+       "when": "Ролики-метафоры",
+       "preview": "/static/previews/mb/I9-iconography-hook.mp4",
+       "src": "motion-blocks I9"
+      }
+     ],
+     "default": "behind",
+     "advanced": false
+    },
+    {
+     "id": "hookextras",
+     "title": "Усилители хука",
+     "hint": "Добавки, которые держат до конца. Можно несколько",
+     "type": "multi",
+     "options": [
+      {
+       "id": "teaser",
+       "name": "Тизер финала",
+       "does": "Маленькая плашка «в конце: …» обещает развязку",
+       "when": "Если в конце есть сильная мысль"
+      },
+      {
+       "id": "questmap",
+       "name": "Карта квеста",
+       "does": "Наверху линия с уровнями 1-2-3, точки загораются по ходу. Зритель видит, что впереди ещё",
+       "when": "Ролики с 2-4 мыслями подряд",
+       "preview": "/static/previews/questmap.mp4",
+       "src": "Квест"
+      },
+      {
+       "id": "sand",
+       "name": "Текст собирается из песка",
+       "does": "Заголовок слетается из золотых частиц",
+       "when": "Фирменный стиль MOTION.md",
+       "src": "MOTION.md §10"
+      },
+      {
+       "id": "land",
+       "name": "Приземление камеры",
+       "does": "Кадр стартует чуть ближе и мягко отъезжает, будто камера только что встала",
+       "when": "Почти всегда"
+      },
+      {
+       "id": "hit",
+       "name": "Удар звука на 0:00",
+       "does": "Кинематографичный удар в первый кадр",
+       "when": "Драйв, квест"
+      }
+     ],
+     "default": [
+      "questmap",
+      "land",
+      "hit",
+      "sand"
+     ],
+     "advanced": false
+    },
+    {
+     "id": "hooktext",
+     "title": "Текст хука",
+     "hint": "Откуда берём слова",
+     "type": "single",
+     "options": [
+      {
+       "id": "speech",
+       "name": "Из твоей речи",
+       "does": "Беру 3-7 слов дословно из видео",
+       "when": "По умолчанию"
+      },
+      {
+       "id": "variants",
+       "name": "Покажи 3 варианта",
+       "does": "Перед монтажом пришлю 3 формулировки из твоих слов, выберешь",
+       "when": "Когда хук важен"
+      },
+      {
+       "id": "mine",
+       "name": "Свой текст",
+       "does": "Впишешь в заметках ниже"
+      }
+     ],
+     "default": "speech",
+     "advanced": true
+    }
+   ]
+  },
+  {
+   "id": "graphics",
+   "num": 5,
+   "title": "Графика и вставки",
+   "hint": "Что появляется в кадре. Выбирай всё, что нравится, расставлю по смыслу речи сам",
+   "groups": [
+    {
+     "id": "techniques",
+     "title": "Приёмы",
+     "hint": "Нажми на карточку, чтобы добавить. Наведи, чтобы посмотреть",
+     "type": "multi",
+     "options": [
+      {
+       "id": "stamps",
+       "name": "Штампы-ярлыки на груди",
+       "does": "Слово-ярлык падает штампом на грудь, зачёркивается и срывается, под ним следующее",
+       "when": "Когда в речи «не X, а Y», ярлыки, стереотипы",
+       "preview": "/static/previews/stamps.mp4",
+       "src": "Квест"
+      },
+      {
+       "id": "behindword",
+       "name": "Гигантское слово за головой",
+       "does": "Одно главное слово огромным золотом в небе за тобой",
+       "when": "Ключевое слово-эмоция: БОЛЬ, ГНЕВ, СТРАХ",
+       "preview": "/static/previews/behind.mp4",
+       "src": "Квест"
+      },
+      {
+       "id": "counter",
+       "name": "Счётчик",
+       "does": "Цифра бежит к значению на нужном слове",
+       "when": "Есть числа",
+       "preview": "/static/previews/counter.mp4",
+       "src": "Квест"
+      },
+      {
+       "id": "window",
+       "name": "Окно со стоком",
+       "does": "Стеклянное окно над головой, внутри атмосферное видео по смыслу фразы",
+       "when": "Метафоры, образы, «представь…»",
+       "preview": "/static/previews/window.mp4",
+       "src": "Квест + Mixkit"
+      },
+      {
+       "id": "xcards",
+       "name": "Карточки ✕ и ✓",
+       "does": "Плашки падают сверху и трескаются крестом или загораются галочкой",
+       "when": "Списки «что не работает / что работает»",
+       "preview": "/static/previews/xcards.mp4",
+       "src": "Квест"
+      },
+      {
+       "id": "mirror",
+       "name": "Двойник-отражение",
+       "does": "Рядом появляется полупрозрачная копия тебя",
+       "when": "Темы про себя, внутренний конфликт, «другой ты»",
+       "preview": "/static/previews/mirror.mp4",
+       "src": "Квест"
+      },
+      {
+       "id": "core",
+       "name": "Ядро света в груди",
+       "does": "Светящееся ядро из частиц в груди, песок втягивается в него",
+       "when": "«Внутри», «притягиваешь», энергия",
+       "preview": "/static/previews/core.mp4",
+       "src": "Квест + MOTION.md"
+      },
+      {
+       "id": "bolts",
+       "name": "Золотые молнии",
+       "does": "Нити света бьют в небе за головой со вспышкой и громом",
+       "when": "Гнев, конфликт, озарение",
+       "preview": "/static/previews/bolts.mp4",
+       "src": "Квест"
+      },
+      {
+       "id": "split",
+       "name": "Сплит 50/50",
+       "does": "Кадр делится: сверху образ или пример, снизу ты",
+       "when": "Пример, сравнение, демонстрация",
+       "preview": "/static/previews/mb/K1-vertical-5050-stacked.mp4",
+       "src": "motion-blocks K1"
+      },
+      {
+       "id": "headout",
+       "name": "Голова поверх карточки",
+       "does": "Карточка за спиной, голова выходит за её край. Объём",
+       "when": "Представление темы, обложка",
+       "preview": "/static/previews/mb/K3-overlap-card-avatar.mp4",
+       "src": "motion-blocks K3"
+      },
+      {
+       "id": "strike",
+       "name": "Зачёркивание",
+       "does": "Фраза пишется, потом её перечёркивает линия",
+       "when": "Опровергнуть миф",
+       "preview": "/static/previews/mb/A9-strikethrough-draw-on.mp4",
+       "src": "motion-blocks A9"
+      },
+      {
+       "id": "marker",
+       "name": "Маркер-выделение",
+       "does": "Под ключевым словом проезжает полоса маркера",
+       "when": "Главная мысль фразы",
+       "preview": "/static/previews/mb/A8-highlighter-sweep.mp4",
+       "src": "motion-blocks A8"
+      },
+      {
+       "id": "underline2",
+       "name": "Двойное подчёркивание",
+       "does": "Два слова подчёркиваются двумя цветами",
+       "when": "Противопоставление двух понятий",
+       "preview": "/static/previews/mb/A16-highlighter-underline-dual-color.mp4",
+       "src": "motion-blocks A16"
+      },
+      {
+       "id": "list",
+       "name": "Список по одному",
+       "does": "Заголовок и 3-5 пунктов появляются по очереди",
+       "when": "Шаги, причины, признаки",
+       "preview": "/static/previews/mb/A4-bullet-list-sequential-reveal.mp4",
+       "src": "motion-blocks A4"
+      },
+      {
+       "id": "cascade",
+       "name": "Каскад слов",
+       "does": "Слова падают столбиком, каждое на свою строку",
+       "when": "Короткая мощная формула",
+       "preview": "/static/previews/mb/A2-verb-noun-cascade-reveal.mp4",
+       "src": "motion-blocks A2"
+      },
+      {
+       "id": "valueswap",
+       "name": "Подмена значения",
+       "does": "Большое число или слово вспыхивает и меняется на другое",
+       "when": "«Было / стало», «думаешь X, а на деле Y»",
+       "preview": "/static/previews/mb/A5-inline-value-swap.mp4",
+       "src": "motion-blocks A5"
+      },
+      {
+       "id": "slot",
+       "name": "Слот-машина цифр",
+       "does": "Цифры крутятся как в кассовом аппарате",
+       "when": "Деньги, результаты",
+       "preview": "/static/previews/mb/A6-counter-slot-machine.mp4",
+       "src": "motion-blocks A6"
+      },
+      {
+       "id": "circle",
+       "name": "Рукописный круг",
+       "does": "Маркер обводит важное от руки",
+       "when": "Обратить внимание на деталь",
+       "preview": "/static/previews/mb/L1-marker-circle.mp4",
+       "src": "motion-blocks L1"
+      },
+      {
+       "id": "arrow",
+       "name": "Рукописная стрелка",
+       "does": "Стрелка от руки показывает на главное",
+       "when": "Указать, куда смотреть",
+       "preview": "/static/previews/mb/L2-handdrawn-arrow.mp4",
+       "src": "motion-blocks L2"
+      },
+      {
+       "id": "scribble",
+       "name": "Каракули-подчёркивание",
+       "does": "Небрежная линия под словом, живо и по-человечески",
+       "when": "Тёплый живой стиль",
+       "preview": "/static/previews/mb/L3-underline-scribble.mp4",
+       "src": "motion-blocks L3"
+      },
+      {
+       "id": "chapters",
+       "name": "Главы",
+       "does": "Короткие заставки «Часть 1, 2, 3» между блоками",
+       "when": "Длинные рилзы с частями",
+       "preview": "/static/previews/mb/G16-cream-chapter-cards.mp4",
+       "src": "motion-blocks G16"
+      },
+      {
+       "id": "fork",
+       "name": "Развилка решения",
+       "does": "Вопрос делится на две ветки: ✕ и ✓",
+       "when": "Выбор, «или так, или так»",
+       "preview": "/static/previews/mb/D9-decision-tree-fork.mp4",
+       "src": "motion-blocks D9"
+      },
+      {
+       "id": "flip",
+       "name": "Карточка-переворот",
+       "does": "Карточка с вопросом переворачивается и показывает ответ",
+       "when": "Вопрос-ответ, миф-правда",
+       "preview": "/static/previews/mb/B3-card-flip-foldover.mp4",
+       "src": "motion-blocks B3"
+      },
+      {
+       "id": "glow",
+       "name": "Светящаяся рамка",
+       "does": "Один результат в рамке с мягким свечением",
+       "when": "Главный вывод, итог",
+       "preview": "/static/previews/mb/G26-glow-frame-highlight.mp4",
+       "src": "motion-blocks G26"
+      },
+      {
+       "id": "burst",
+       "name": "Взрыв слов",
+       "does": "Из центра разлетаются связанные слова",
+       "when": "Ассоциации, «это всё про одно»",
+       "preview": "/static/previews/mb/C1-radial-word-burst.mp4",
+       "src": "motion-blocks C1"
+      },
+      {
+       "id": "particles",
+       "name": "Частицы собираются в форму",
+       "does": "Поток частиц складывается в образ",
+       "when": "Рост, сборка, «всё складывается»",
+       "preview": "/static/previews/mb/C2-particle-stream-cluster.mp4",
+       "src": "motion-blocks C2"
+      },
+      {
+       "id": "path",
+       "name": "Точка по пути",
+       "does": "Светящаяся точка бежит по пунктиру от А к Б",
+       "when": "Путь, связь причины и следствия",
+       "preview": "/static/previews/mb/C8-dot-along-dashed-path.mp4",
+       "src": "motion-blocks C8"
+      },
+      {
+       "id": "beforeafter",
+       "name": "До и после",
+       "does": "Экран делится на было и стало",
+       "when": "Трансформация",
+       "preview": "/static/previews/mb/M2-before-after-split.mp4",
+       "src": "motion-blocks M2"
+      },
+      {
+       "id": "spotlight",
+       "name": "Прожектор",
+       "does": "Тёмная сцена, тёплый ореол раскрывается вокруг главного",
+       "when": "Драматичный акцент",
+       "preview": "/static/previews/mb/E3-spotlight-halo.mp4",
+       "src": "motion-blocks E3"
+      },
+      {
+       "id": "stockintro",
+       "name": "Кино-кадр с надписью",
+       "does": "Атмосферный сток с медленным наездом и изящной подписью",
+       "when": "Начало истории, смена сцены",
+       "preview": "/static/previews/mb/F1-stock-footage-caption-typeon.mp4",
+       "src": "motion-blocks F1"
+      },
+      {
+       "id": "oneaccent",
+       "name": "Одно слово цветом",
+       "does": "Чёрно-белая фраза, одно слово в акцентном цвете (приём Дэна Коу)",
+       "when": "Сдержанный умный стиль",
+       "preview": "/static/previews/mb/I5-bw-single-accent.mp4",
+       "src": "motion-blocks I5"
+      },
+      {
+       "id": "wordicon",
+       "name": "Слово + иконка",
+       "does": "Каждое слово появляется со своей иконкой",
+       "when": "Объяснение через образы",
+       "preview": "/static/previews/mb/I4-sync-writing-word-icon.mp4",
+       "src": "motion-blocks I4"
+      },
+      {
+       "id": "sketch",
+       "name": "Рисунок от руки",
+       "does": "Линии рисуются маркером прямо в кадре",
+       "when": "Объяснить схему, тёплый стиль",
+       "preview": "/static/previews/mb/I3-hand-drawn-sketch.mp4",
+       "src": "motion-blocks I3"
+      },
+      {
+       "id": "route",
+       "name": "Маршрут на карте",
+       "does": "Самолёт летит по дуге между городами",
+       "when": "Путешествия, переезды",
+       "preview": "/static/previews/mb/O5-plane-flight-route-map.mp4",
+       "src": "motion-blocks O5"
+      },
+      {
+       "id": "poster",
+       "name": "Редакционный постер",
+       "does": "Кадр как обложка журнала",
+       "when": "Обложка, финальный кадр",
+       "preview": "/static/previews/mb/P1-editorial-poster.mp4",
+       "src": "motion-blocks P1"
+      }
+     ],
+     "default": [
+      "stamps",
+      "behindword",
+      "counter",
+      "window",
+      "xcards",
+      "mirror",
+      "core",
+      "bolts"
+     ],
+     "advanced": false
+    },
+    {
+     "id": "cardstyle",
+     "title": "Стиль плашек",
+     "hint": "Как выглядят все карточки с текстом",
+     "type": "single",
+     "options": [
+      {
+       "id": "glass",
+       "name": "Стекло (фирменный)",
+       "does": "Полупрозрачное размытое стекло с тонкой золотой обводкой, как у Apple",
+       "when": "По умолчанию, твой стиль из MOTION.md",
+       "src": "MOTION.md §9"
+      },
+      {
+       "id": "paper",
+       "name": "Кремовая бумага",
+       "does": "Тёплый бумажный фон, тёмный текст, рукописные акценты",
+       "when": "Тёплый, человечный, обучение"
+      },
+      {
+       "id": "minimal",
+       "name": "Минимал",
+       "does": "Без плашек, только чистый белый текст с тенью",
+       "when": "Люкс, тревел, сдержанно"
+      },
+      {
+       "id": "brutal",
+       "name": "Брутал",
+       "does": "Жирный текст капсом, контрастные блоки",
+       "when": "Хайп, мужская аудитория"
+      },
+      {
+       "id": "cinema",
+       "name": "Тёмное кино",
+       "does": "Чёрные полосы, тонкий текст как в титрах фильма",
+       "when": "Драма, истории"
+      }
+     ],
+     "default": "glass",
+     "advanced": false
+    },
+    {
+     "id": "font",
+     "title": "Шрифт",
+     "hint": "Шрифт задаёт ощущение цены",
+     "type": "single",
+     "options": [
+      {
+       "id": "inter",
+       "name": "Inter (как у Apple)",
+       "does": "Чистый современный гротеск",
+       "when": "По умолчанию"
+      },
+      {
+       "id": "serif",
+       "name": "Редакционный с засечками",
+       "does": "Как в журналах, дорого и умно",
+       "when": "Люкс, глубокие темы"
+      },
+      {
+       "id": "heavy",
+       "name": "Жирный гротеск",
+       "does": "Плотный, громкий",
+       "when": "Драйв, хайп"
+      },
+      {
+       "id": "hand",
+       "name": "Рукописный акцент",
+       "does": "Основной Inter, отдельные слова от руки",
+       "when": "Тёплый личный стиль"
+      }
+     ],
+     "default": "inter",
+     "advanced": true
+    },
+    {
+     "id": "accent",
+     "title": "Акцентный цвет",
+     "hint": "Один цвет для главных слов",
+     "type": "single",
+     "options": [
+      {
+       "id": "gold",
+       "name": "Золото",
+       "does": "#F5B84A, твой фирменный",
+       "when": "По умолчанию"
+      },
+      {
+       "id": "white",
+       "name": "Белый",
+       "does": "Без цвета, всё в белом",
+       "when": "Минимал"
+      },
+      {
+       "id": "brand",
+       "name": "Бренд клиента",
+       "does": "Возьму цвет из логотипа или рефа клиента",
+       "when": "Заказы"
+      },
+      {
+       "id": "ref",
+       "name": "Как в рефе",
+       "does": "Замерю цвет акцентов в референсе"
+      }
+     ],
+     "default": "gold",
+     "advanced": true
+    },
+    {
+     "id": "density",
+     "title": "Плотность графики",
+     "hint": "Как часто появляется что-то новое",
+     "type": "single",
+     "options": [
+      {
+       "id": "rare",
+       "name": "Редко",
+       "does": "3-4 вставки на ролик, только ключевые мысли"
+      },
+      {
+       "id": "mid",
+       "name": "Каждые 5-7 секунд",
+       "does": "Ровный ритм"
+      },
+      {
+       "id": "quest",
+       "name": "Каждые 3-4 секунды",
+       "does": "Как в «Квесте»: глаз всё время получает новое"
+      }
+     ],
+     "default": "quest",
+     "advanced": false
+    },
+    {
+     "id": "zones",
+     "title": "Где может быть графика",
+     "hint": "Лицо не закрываю никогда, проверяю детектором лиц",
+     "type": "multi",
+     "options": [
+      {
+       "id": "above",
+       "name": "Над головой",
+       "does": "Основная зона плашек"
+      },
+      {
+       "id": "behind",
+       "name": "За головой",
+       "does": "Нужна маска человека, считается около 20 минут"
+      },
+      {
+       "id": "chest",
+       "name": "На груди",
+       "does": "Штампы, ядро"
+      },
+      {
+       "id": "full",
+       "name": "Во весь кадр на мгновение",
+       "does": "Вспышки, короткие перебивки до 0,5 с"
+      },
+      {
+       "id": "splitzone",
+       "name": "Половина кадра",
+       "does": "Сплит и окна"
+      }
+     ],
+     "default": [
+      "above",
+      "behind",
+      "chest",
+      "full"
+     ],
+     "advanced": true
+    },
+    {
+     "id": "subs",
+     "title": "Субтитры",
+     "hint": "Если в исходнике уже вшиты, второй слой не ставлю",
+     "type": "single",
+     "options": [
+      {
+       "id": "keep",
+       "name": "Оставить вшитые",
+       "does": "Не трогаю то, что уже есть в видео"
+      },
+      {
+       "id": "live",
+       "name": "Живые по словам",
+       "does": "Inter, белый, слово-акцент золотом, появляются в такт речи",
+       "when": "Исходник без субтитров",
+       "src": "MOTION.md §11"
+      },
+      {
+       "id": "hormozi",
+       "name": "Крупные по словам",
+       "does": "Жирные слова по одному в центре, как у Хормози",
+       "when": "Хайп",
+       "preview": "/static/previews/mb/J1-hormozi-burst-sync.mp4",
+       "src": "motion-blocks J1"
+      },
+      {
+       "id": "river",
+       "name": "Поток по 1-2 слова",
+       "does": "Аккуратная строка из 1-2 слов",
+       "when": "Минимал",
+       "preview": "/static/previews/mb/J5-word-stream-whisper-sync.mp4",
+       "src": "motion-blocks J5"
+      },
+      {
+       "id": "none",
+       "name": "Без субтитров",
+       "does": "Только графика"
+      }
+     ],
+     "default": "keep",
+     "advanced": false
+    },
+    {
+     "id": "atmos",
+     "title": "Атмосфера",
+     "hint": "Живой слой поверх всего",
+     "type": "multi",
+     "options": [
+      {
+       "id": "sand",
+       "name": "Золотой звёздный песок",
+       "does": "Мерцающие частицы вокруг плашек",
+       "when": "Фирменный стиль",
+       "src": "MOTION.md §9"
+      },
+      {
+       "id": "grain",
+       "name": "Плёночное зерно",
+       "does": "Лёгкое зерно, картинка живее",
+       "when": "Кино, драма",
+       "preview": "/static/previews/mb/P2-anti-clean-aesthetic.mp4"
+      },
+      {
+       "id": "vignette",
+       "name": "Виньетка",
+       "does": "Края кадра чуть темнее, взгляд в центр"
+      },
+      {
+       "id": "aura",
+       "name": "Аура на фоне",
+       "does": "Мягкие дышащие пятна света",
+       "when": "Медитативно",
+       "preview": "/static/previews/mb/E2-pure-black-aura-blob.mp4"
+      }
+     ],
+     "default": [
+      "sand"
+     ],
+     "advanced": true
+    }
+   ]
+  },
+  {
+   "id": "color",
+   "num": 6,
+   "title": "Цвет и свет",
+   "hint": "Нейтрально и чисто: белое белое, кожа живая",
+   "groups": [
+    {
+     "id": "look",
+     "title": "Цветовой образ",
+     "hint": "Один на весь ролик",
+     "type": "single",
+     "options": [
+      {
+       "id": "neutral",
+       "name": "Нейтрально и чисто",
+       "does": "Убираю перекосы, кожа естественная",
+       "when": "Почти всегда"
+      },
+      {
+       "id": "warm",
+       "name": "Тёплый",
+       "does": "Чуть теплее и мягче",
+       "when": "Уют, доверие"
+      },
+      {
+       "id": "cinema",
+       "name": "Кино",
+       "does": "Тени холоднее, кожа теплее, на половину силы",
+       "when": "Драма, истории"
+      },
+      {
+       "id": "ref",
+       "name": "Под реф",
+       "does": "Замерю цвет референса и подгоню умеренно",
+       "when": "Заказы с рефом"
+      },
+      {
+       "id": "asis",
+       "name": "Как снято",
+       "does": "Цвет не трогаю"
+      }
+     ],
+     "default": "neutral",
+     "advanced": false
+    },
+    {
+     "id": "strength",
+     "title": "Сила цветокора",
+     "hint": "На 100% картинка выглядит перефильтрованной",
+     "type": "slider",
+     "options": {
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "%"
+     },
+     "default": 50,
+     "advanced": true
+    },
+    {
+     "id": "light",
+     "title": "Свет и контраст",
+     "hint": "Можно несколько",
+     "type": "multi",
+     "options": [
+      {
+       "id": "dimbg",
+       "name": "Притемнять фон на акцентах",
+       "does": "Фон за тобой темнеет, ты остаёшься ярким. Работает с маской",
+       "when": "Слова за головой, драма"
+      },
+      {
+       "id": "skin",
+       "name": "Выровнять кожу",
+       "does": "Мягко убираю пятна цвета на лице"
+      },
+      {
+       "id": "darkcheck",
+       "name": "Проверить тёмные сцены цифрой",
+       "does": "Замеряю яркость, чтобы на телефоне всё было видно",
+       "when": "Всегда"
+      }
+     ],
+     "default": [
+      "dimbg",
+      "darkcheck"
+     ],
+     "advanced": true
+    }
+   ]
+  },
+  {
+   "id": "sound",
+   "num": 7,
+   "title": "Звук",
+   "hint": "Голос главный, музыка под ним, звуки на события",
+   "groups": [
+    {
+     "id": "music",
+     "title": "Музыка",
+     "hint": "Настроение подложки",
+     "type": "single",
+     "options": [
+      {
+       "id": "tense",
+       "name": "Тревожное кино",
+       "does": "Пульс и напряжение, затишье на рефлексии",
+       "when": "Квест, психология, разоблачения"
+      },
+      {
+       "id": "warm",
+       "name": "Тёплое вдохновляющее",
+       "does": "Мягкое пианино, струнные",
+       "when": "Личные истории, поддержка"
+      },
+      {
+       "id": "drive",
+       "name": "Драйв",
+       "does": "Ритмичный бит",
+       "when": "Хайп, мотивация"
+      },
+      {
+       "id": "ambient",
+       "name": "Спокойный эмбиент",
+       "does": "Тихий фон без ритма",
+       "when": "Медитации, люкс"
+      },
+      {
+       "id": "ref",
+       "name": "Как в рефе",
+       "does": "Ищу похожий трек или беру тот же",
+       "when": "Заказы с рефом"
+      },
+      {
+       "id": "own",
+       "name": "Своя музыка",
+       "does": "Укажешь файл в заметках"
+      },
+      {
+       "id": "none",
+       "name": "Без музыки",
+       "does": "Только голос и звуки"
+      }
+     ],
+     "default": "tense",
+     "advanced": false
+    },
+    {
+     "id": "drop",
+     "title": "Удар музыки на ключевой фразе",
+     "hint": "Ставлю трек так, чтобы бит вернулся точно на главный поворот",
+     "type": "toggle",
+     "options": null,
+     "default": true,
+     "advanced": false
+    },
+    {
+     "id": "sfx",
+     "title": "Звуковые эффекты",
+     "hint": "Сколько звуков на события",
+     "type": "single",
+     "options": [
+      {
+       "id": "quiet",
+       "name": "Тихо",
+       "does": "До 6 звуков на 30 секунд, только главное"
+      },
+      {
+       "id": "normal",
+       "name": "Норма",
+       "does": "8-10 на 30 секунд"
+      },
+      {
+       "id": "drive",
+       "name": "Драйв",
+       "does": "11-14 на 30 секунд, как в «Квесте»"
+      }
+     ],
+     "default": "drive",
+     "advanced": false
+    },
+    {
+     "id": "themed",
+     "title": "Тематические звуки",
+     "hint": "Звуки под смысл, а не только щелчки",
+     "type": "multi",
+     "options": [
+      {
+       "id": "heart",
+       "name": "Сердцебиение",
+       "does": "На словах про боль, страх, волнение"
+      },
+      {
+       "id": "stamp",
+       "name": "Удар, штамп",
+       "does": "Под ярлыки и резкие тезисы"
+      },
+      {
+       "id": "glass",
+       "name": "Треск стекла",
+       "does": "Под ✕ и «разбилось»"
+      },
+      {
+       "id": "thunder",
+       "name": "Гром",
+       "does": "Под гнев и конфликт"
+      },
+      {
+       "id": "ui",
+       "name": "Щелчки интерфейса",
+       "does": "Под появление плашек"
+      },
+      {
+       "id": "whoosh",
+       "name": "Свист переходов",
+       "does": "Под смену сцен"
+      },
+      {
+       "id": "riser",
+       "name": "Нарастание",
+       "does": "Перед главным поворотом"
+      }
+     ],
+     "default": [
+      "heart",
+      "stamp",
+      "glass",
+      "thunder",
+      "ui",
+      "whoosh",
+      "riser"
+     ],
+     "advanced": true
+    },
+    {
+     "id": "voice",
+     "title": "Голос",
+     "hint": "Чистый голос делает ролик дорогим",
+     "type": "multi",
+     "options": [
+      {
+       "id": "denoise",
+       "name": "Убрать шум",
+       "does": "Ветер, гул, шипение"
+      },
+      {
+       "id": "level",
+       "name": "Выровнять громкость",
+       "does": "Тихие и громкие места становятся ровными"
+      },
+      {
+       "id": "ambience",
+       "name": "Оставить немного живого звука",
+       "does": "Чуть-чуть моря или улицы для атмосферы"
+      }
+     ],
+     "default": [
+      "denoise",
+      "level"
+     ],
+     "advanced": true
+    }
+   ]
+  },
+  {
+   "id": "output",
+   "num": 8,
+   "title": "Выход",
+   "hint": "Куда и в каком виде отдаю",
+   "groups": [
+    {
+     "id": "format",
+     "title": "Формат кадра",
+     "hint": "",
+     "type": "single",
+     "options": [
+      {
+       "id": "916",
+       "name": "9:16 вертикаль",
+       "does": "Reels, Shorts, TikTok",
+       "when": "По умолчанию"
+      },
+      {
+       "id": "45",
+       "name": "4:5",
+       "does": "Лента Instagram"
+      },
+      {
+       "id": "11",
+       "name": "1:1 квадрат",
+       "does": "Лента, VK"
+      },
+      {
+       "id": "169",
+       "name": "16:9 горизонталь",
+       "does": "YouTube"
+      }
+     ],
+     "default": "916",
+     "advanced": false
+    },
+    {
+     "id": "platforms",
+     "title": "Площадки",
+     "hint": "Под них проверю безопасные зоны",
+     "type": "multi",
+     "options": [
+      {
+       "id": "reels",
+       "name": "Instagram Reels",
+       "does": ""
+      },
+      {
+       "id": "tiktok",
+       "name": "TikTok",
+       "does": ""
+      },
+      {
+       "id": "shorts",
+       "name": "YouTube Shorts",
+       "does": ""
+      },
+      {
+       "id": "vk",
+       "name": "VK Клипы",
+       "does": ""
+      },
+      {
+       "id": "tg",
+       "name": "Telegram",
+       "does": ""
+      }
+     ],
+     "default": [
+      "reels",
+      "tiktok",
+      "shorts"
+     ],
+     "advanced": false
+    },
+    {
+     "id": "fps",
+     "title": "Частота кадров",
+     "hint": "Кратно исходнику, иначе микрорывки",
+     "type": "single",
+     "options": [
+      {
+       "id": "auto",
+       "name": "Авто, кратно исходнику",
+       "does": "Сам посчитаю (50 → 25, 60 → 30)",
+       "when": "Всегда"
+      },
+      {
+       "id": "30",
+       "name": "30 к/с",
+       "does": ""
+      },
+      {
+       "id": "25",
+       "name": "25 к/с",
+       "does": ""
+      },
+      {
+       "id": "60",
+       "name": "60 к/с",
+       "does": ""
+      }
+     ],
+     "default": "auto",
+     "advanced": true
+    },
+    {
+     "id": "extras",
+     "title": "Дополнительно",
+     "hint": "",
+     "type": "multi",
+     "options": [
+      {
+       "id": "loop",
+       "name": "Бесшовный луп",
+       "does": "Конец перетекает в начало, ролик крутится без шва",
+       "when": "Рилзы"
+      },
+      {
+       "id": "cover",
+       "name": "Кадр-обложка",
+       "does": "Сохраню лучший кадр как обложку"
+      },
+      {
+       "id": "open",
+       "name": "Открыть папку по готовности",
+       "does": "Сам открою Готовое\\Видео"
+      }
+     ],
+     "default": [
+      "open",
+      "cover"
+     ],
+     "advanced": true
+    }
+   ]
+  }
+ ],
+ "recipes": [
+  {
+   "id": "quest",
+   "name": "Квест",
+   "does": "Уровни, слова за головой, штампы, смэш-кат на бит. Как «Нет плохих людей»",
+   "preview": "/static/previews/smash.mp4",
+   "values": {
+    "pauses": "tight",
+    "framing": "cuts",
+    "push": "mix",
+    "tempo": "drive",
+    "transitions": [
+     "whip",
+     "smash"
+    ],
+    "hook": "behind",
+    "hookextras": [
+     "questmap",
+     "land",
+     "hit",
+     "sand"
+    ],
+    "techniques": [
+     "stamps",
+     "behindword",
+     "counter",
+     "window",
+     "xcards",
+     "mirror",
+     "core",
+     "bolts"
+    ],
+    "cardstyle": "glass",
+    "density": "quest",
+    "music": "tense",
+    "sfx": "drive",
+    "atmos": [
+     "sand"
+    ],
+    "look": "neutral"
+   }
+  },
+  {
+   "id": "apple",
+   "name": "Минимал Apple",
+   "does": "Много воздуха, одна мысль на экран, стекло и тишина",
+   "preview": "/static/previews/mb/I5-bw-single-accent.mp4",
+   "values": {
+    "pauses": "soft",
+    "framing": "accents",
+    "push": "slow",
+    "tempo": "calm",
+    "transitions": [
+     "smooth"
+    ],
+    "hook": "above",
+    "hookextras": [
+     "land"
+    ],
+    "techniques": [
+     "oneaccent",
+     "marker",
+     "glow"
+    ],
+    "cardstyle": "glass",
+    "density": "rare",
+    "music": "ambient",
+    "sfx": "quiet",
+    "atmos": [],
+    "look": "neutral",
+    "subs": "river"
+   }
+  },
+  {
+   "id": "docu",
+   "name": "Документалка",
+   "does": "Интервью как в кино: тёмные титры, сток-перебивки, зерно",
+   "preview": "/static/previews/mb/F1-stock-footage-caption-typeon.mp4",
+   "values": {
+    "pauses": "soft",
+    "framing": "accents",
+    "push": "slow",
+    "tempo": "even",
+    "transitions": [
+     "smooth",
+     "flash"
+    ],
+    "hook": "strongest",
+    "hookextras": [
+     "teaser"
+    ],
+    "techniques": [
+     "window",
+     "stockintro",
+     "spotlight"
+    ],
+    "cardstyle": "cinema",
+    "font": "serif",
+    "density": "mid",
+    "music": "warm",
+    "sfx": "normal",
+    "atmos": [
+     "grain",
+     "vignette"
+    ],
+    "look": "cinema"
+   }
+  },
+  {
+   "id": "hype",
+   "name": "Драйв и хайп",
+   "does": "Джамп-каты, крупные субтитры, панчи и звук на каждом событии",
+   "preview": "/static/previews/mb/J1-hormozi-burst-sync.mp4",
+   "values": {
+    "pauses": "jump",
+    "framing": "cuts",
+    "push": "punch",
+    "tempo": "drive",
+    "transitions": [
+     "whip",
+     "flash",
+     "swap"
+    ],
+    "hook": "strongest",
+    "hookextras": [
+     "hit",
+     "teaser"
+    ],
+    "techniques": [
+     "slot",
+     "list",
+     "valueswap",
+     "xcards",
+     "beforeafter"
+    ],
+    "cardstyle": "brutal",
+    "font": "heavy",
+    "density": "quest",
+    "music": "drive",
+    "sfx": "drive",
+    "subs": "hormozi",
+    "atmos": [],
+    "look": "neutral"
+   }
+  },
+  {
+   "id": "lux",
+   "name": "Люкс и тревел",
+   "does": "Тонко и сдержанно: тонкий текст, тёплый цвет, никаких крикливых эффектов",
+   "preview": "/static/previews/mb/P1-editorial-poster.mp4",
+   "values": {
+    "pauses": "soft",
+    "framing": "none",
+    "push": "slow",
+    "tempo": "calm",
+    "transitions": [
+     "smooth"
+    ],
+    "hook": "above",
+    "hookextras": [
+     "land"
+    ],
+    "techniques": [
+     "stockintro",
+     "route",
+     "poster"
+    ],
+    "cardstyle": "minimal",
+    "font": "serif",
+    "density": "rare",
+    "music": "ambient",
+    "sfx": "quiet",
+    "atmos": [
+     "vignette"
+    ],
+    "look": "warm"
+   }
+  },
+  {
+   "id": "expert",
+   "name": "Эксперт и доверие",
+   "does": "Спокойная подача, списки, схемы от руки, тёплая бумага",
+   "preview": "/static/previews/mb/A4-bullet-list-sequential-reveal.mp4",
+   "values": {
+    "pauses": "tight",
+    "framing": "accents",
+    "push": "slow",
+    "tempo": "even",
+    "transitions": [
+     "smooth",
+     "swap"
+    ],
+    "hook": "question",
+    "hookextras": [
+     "teaser",
+     "land"
+    ],
+    "techniques": [
+     "list",
+     "marker",
+     "circle",
+     "arrow",
+     "flip",
+     "chapters"
+    ],
+    "cardstyle": "paper",
+    "font": "hand",
+    "density": "mid",
+    "music": "warm",
+    "sfx": "normal",
+    "atmos": [],
+    "look": "warm"
+   }
+  },
+  {
+   "id": "ref",
+   "name": "Повторить реф 1 в 1",
+   "does": "Разберу референс по кадрам и повторю темп, цвет, музыку и длину",
+   "preview": null,
+   "values": {
+    "length": "ref",
+    "look": "ref",
+    "music": "ref",
+    "accent": "ref"
+   }
+  }
+ ],
+ "library": [
+  {
+   "id": "A1-serif-italic-emphasis-typeon",
+   "code": "A1",
+   "family": "A-typography",
+   "name": "Курсив с засечками",
+   "does": "Фраза печатается, одно слово выделено курсивом",
+   "talking": false,
+   "preview": "/static/previews/mb/A1-serif-italic-emphasis-typeon.mp4"
+  },
+  {
+   "id": "A10-typewriter-prompt-entry",
+   "code": "A10",
+   "family": "A-typography",
+   "name": "Ввод в терминал",
+   "does": "Окно терминала, команда печатается",
+   "talking": false,
+   "preview": "/static/previews/mb/A10-typewriter-prompt-entry.mp4"
+  },
+  {
+   "id": "A11-burnt-in-chunky-uppercase",
+   "code": "A11",
+   "family": "A-typography",
+   "name": "Жирный жёлтый заголовок",
+   "does": "Крупный заголовок капсом поднимается снизу",
+   "talking": false,
+   "preview": "/static/previews/mb/A11-burnt-in-chunky-uppercase.mp4"
+  },
+  {
+   "id": "A12-glitch-rgb-split-intro",
+   "code": "A12",
+   "family": "A-typography",
+   "name": "Глитч-интро",
+   "does": "Три гигантских слова влетают с цифровым сбоем",
+   "talking": false,
+   "preview": "/static/previews/mb/A12-glitch-rgb-split-intro.mp4"
+  },
+  {
+   "id": "A13-psychedelic-kinetic-typo",
+   "code": "A13",
+   "family": "A-typography",
+   "name": "Психоделичная типографика",
+   "does": "Огромные слова перетекают друг в друга",
+   "talking": false,
+   "preview": "/static/previews/mb/A13-psychedelic-kinetic-typo.mp4"
+  },
+  {
+   "id": "A15-hormozi-caption-sync",
+   "code": "A15",
+   "family": "A-typography",
+   "name": "Субтитры Хормози в сплите",
+   "does": "Сплит экрана и жирные субтитры по словам",
+   "talking": false,
+   "preview": "/static/previews/mb/A15-hormozi-caption-sync.mp4"
+  },
+  {
+   "id": "A16-highlighter-underline-dual-color",
+   "code": "A16",
+   "family": "A-typography",
+   "name": "Двойное подчёркивание",
+   "does": "Два слова подчёркиваются двумя цветами",
+   "talking": true,
+   "preview": "/static/previews/mb/A16-highlighter-underline-dual-color.mp4"
+  },
+  {
+   "id": "A17-text-bounce-in-multiscene",
+   "code": "A17",
+   "family": "A-typography",
+   "name": "Слова прыгают",
+   "does": "Слова появляются с упругим отскоком",
+   "talking": true,
+   "preview": "/static/previews/mb/A17-text-bounce-in-multiscene.mp4"
+  },
+  {
+   "id": "A18-title-strap-caps",
+   "code": "A18",
+   "family": "A-typography",
+   "name": "Плашка-титр капсом",
+   "does": "Широкий титр капсом с тенью",
+   "talking": true,
+   "preview": "/static/previews/mb/A18-title-strap-caps.mp4"
+  },
+  {
+   "id": "A2-verb-noun-cascade-reveal",
+   "code": "A2",
+   "family": "A-typography",
+   "name": "Каскад слов",
+   "does": "Каждое слово падает на свою строку",
+   "talking": true,
+   "preview": "/static/previews/mb/A2-verb-noun-cascade-reveal.mp4"
+  },
+  {
+   "id": "A3-pixel-font-glowing-badge",
+   "code": "A3",
+   "family": "A-typography",
+   "name": "Пиксельный значок",
+   "does": "Ретро-цифра в пиксельном шрифте со свечением",
+   "talking": false,
+   "preview": "/static/previews/mb/A3-pixel-font-glowing-badge.mp4"
+  },
+  {
+   "id": "A4-bullet-list-sequential-reveal",
+   "code": "A4",
+   "family": "A-typography",
+   "name": "Список по одному",
+   "does": "Заголовок и пункты по очереди",
+   "talking": true,
+   "preview": "/static/previews/mb/A4-bullet-list-sequential-reveal.mp4"
+  },
+  {
+   "id": "A5-inline-value-swap",
+   "code": "A5",
+   "family": "A-typography",
+   "name": "Подмена значения",
+   "does": "Большое число вспыхивает и меняется",
+   "talking": true,
+   "preview": "/static/previews/mb/A5-inline-value-swap.mp4"
+  },
+  {
+   "id": "A6-counter-slot-machine",
+   "code": "A6",
+   "family": "A-typography",
+   "name": "Слот-машина цифр",
+   "does": "Цифры крутятся как в кассе",
+   "talking": true,
+   "preview": "/static/previews/mb/A6-counter-slot-machine.mp4"
+  },
+  {
+   "id": "A8-highlighter-sweep",
+   "code": "A8",
+   "family": "A-typography",
+   "name": "Маркер",
+   "does": "Полоса маркера проезжает под словами",
+   "talking": true,
+   "preview": "/static/previews/mb/A8-highlighter-sweep.mp4"
+  },
+  {
+   "id": "A9-strikethrough-draw-on",
+   "code": "A9",
+   "family": "A-typography",
+   "name": "Зачёркивание",
+   "does": "Фраза пишется и перечёркивается",
+   "talking": true,
+   "preview": "/static/previews/mb/A9-strikethrough-draw-on.mp4"
+  },
+  {
+   "id": "B1-card-stack-tumble",
+   "code": "B1",
+   "family": "B-3d-objects",
+   "name": "Стопка карточек",
+   "does": "Карточки падают и складываются стопкой",
+   "talking": false,
+   "preview": "/static/previews/mb/B1-card-stack-tumble.mp4"
+  },
+  {
+   "id": "B10-isometric-desk",
+   "code": "B10",
+   "family": "B-3d-objects",
+   "name": "Изометрический стол",
+   "does": "Рабочий стол собирается из предметов",
+   "talking": false,
+   "preview": "/static/previews/mb/B10-isometric-desk.mp4"
+  },
+  {
+   "id": "B11-iso-tilted-ui-black",
+   "code": "B11",
+   "family": "B-3d-objects",
+   "name": "Наклонная панель",
+   "does": "Интерфейс в изометрии на чёрном",
+   "talking": false,
+   "preview": "/static/previews/mb/B11-iso-tilted-ui-black.mp4"
+  },
+  {
+   "id": "B12-camera-pan-parallax-ui",
+   "code": "B12",
+   "family": "B-3d-objects",
+   "name": "Параллакс панелей",
+   "does": "Камера проезжает мимо панелей на разной глубине",
+   "talking": false,
+   "preview": "/static/previews/mb/B12-camera-pan-parallax-ui.mp4"
+  },
+  {
+   "id": "B13-panel-float-up-reveal",
+   "code": "B13",
+   "family": "B-3d-objects",
+   "name": "Панели всплывают",
+   "does": "Панели поднимаются из свечения снизу",
+   "talking": false,
+   "preview": "/static/previews/mb/B13-panel-float-up-reveal.mp4"
+  },
+  {
+   "id": "B14-multi-panel-grid-reveal",
+   "code": "B14",
+   "family": "B-3d-objects",
+   "name": "Сетка панелей",
+   "does": "Шесть панелей разлетаются в сетку",
+   "talking": false,
+   "preview": "/static/previews/mb/B14-multi-panel-grid-reveal.mp4"
+  },
+  {
+   "id": "B15-3d-cinematic-carousel",
+   "code": "B15",
+   "family": "B-3d-objects",
+   "name": "3D-карусель видео",
+   "does": "Видео-панели крутятся цилиндром",
+   "talking": false,
+   "preview": "/static/previews/mb/B15-3d-cinematic-carousel.mp4"
+  },
+  {
+   "id": "B2-tilted-card-shadow",
+   "code": "B2",
+   "family": "B-3d-objects",
+   "name": "Карточка с наклоном",
+   "does": "Карточка влетает и ложится под углом",
+   "talking": false,
+   "preview": "/static/previews/mb/B2-tilted-card-shadow.mp4"
+  },
+  {
+   "id": "B3-card-flip-foldover",
+   "code": "B3",
+   "family": "B-3d-objects",
+   "name": "Карточка-переворот",
+   "does": "Вопрос переворачивается в ответ",
+   "talking": true,
+   "preview": "/static/previews/mb/B3-card-flip-foldover.mp4"
+  },
+  {
+   "id": "B4-hovering-app-icon-hero",
+   "code": "B4",
+   "family": "B-3d-objects",
+   "name": "Иконка-герой",
+   "does": "Объёмная иконка приземляется и парит",
+   "talking": false,
+   "preview": "/static/previews/mb/B4-hovering-app-icon-hero.mp4"
+  },
+  {
+   "id": "B5-physical-object-metaphor",
+   "code": "B5",
+   "family": "B-3d-objects",
+   "name": "Предмет-метафора",
+   "does": "Предметы падают и складываются в образ",
+   "talking": false,
+   "preview": "/static/previews/mb/B5-physical-object-metaphor.mp4"
+  },
+  {
+   "id": "B8-folder-accumulation",
+   "code": "B8",
+   "family": "B-3d-objects",
+   "name": "Папка копит листы",
+   "does": "В папку падают листы один за другим",
+   "talking": false,
+   "preview": "/static/previews/mb/B8-folder-accumulation.mp4"
+  },
+  {
+   "id": "B9-pill-to-card-morph",
+   "code": "B9",
+   "family": "B-3d-objects",
+   "name": "Таблетка в карточку",
+   "does": "Маленькая метка раскрывается в карточку",
+   "talking": false,
+   "preview": "/static/previews/mb/B9-pill-to-card-morph.mp4"
+  },
+  {
+   "id": "C1-radial-word-burst",
+   "code": "C1",
+   "family": "C-particles-dataviz",
+   "name": "Взрыв слов",
+   "does": "Слова разлетаются из центра",
+   "talking": true,
+   "preview": "/static/previews/mb/C1-radial-word-burst.mp4"
+  },
+  {
+   "id": "C2-particle-stream-cluster",
+   "code": "C2",
+   "family": "C-particles-dataviz",
+   "name": "Поток частиц",
+   "does": "Частицы складываются в форму",
+   "talking": true,
+   "preview": "/static/previews/mb/C2-particle-stream-cluster.mp4"
+  },
+  {
+   "id": "C3-knowledge-graph-zoomout",
+   "code": "C3",
+   "family": "C-particles-dataviz",
+   "name": "Граф знаний",
+   "does": "Камера отъезжает от узла к целой сети",
+   "talking": false,
+   "preview": "/static/previews/mb/C3-knowledge-graph-zoomout.mp4"
+  },
+  {
+   "id": "C4-dot-grid-reveal",
+   "code": "C4",
+   "family": "C-particles-dataviz",
+   "name": "Сетка точек",
+   "does": "Точки загораются и меняют цвет",
+   "talking": false,
+   "preview": "/static/previews/mb/C4-dot-grid-reveal.mp4"
+  },
+  {
+   "id": "C5-voxel-formation",
+   "code": "C5",
+   "family": "C-particles-dataviz",
+   "name": "Сборка из кубиков",
+   "does": "Кубики слетаются в образ",
+   "talking": false,
+   "preview": "/static/previews/mb/C5-voxel-formation.mp4"
+  },
+  {
+   "id": "C6-bar-chart-stagger",
+   "code": "C6",
+   "family": "C-particles-dataviz",
+   "name": "Растущие столбики",
+   "does": "Диаграмма растёт со счётчиком",
+   "talking": false,
+   "preview": "/static/previews/mb/C6-bar-chart-stagger.mp4"
+  },
+  {
+   "id": "C7-avatar-grid-stagger",
+   "code": "C7",
+   "family": "C-particles-dataviz",
+   "name": "Сетка аватаров",
+   "does": "Кружки-люди появляются, считается число",
+   "talking": false,
+   "preview": "/static/previews/mb/C7-avatar-grid-stagger.mp4"
+  },
+  {
+   "id": "C8-dot-along-dashed-path",
+   "code": "C8",
+   "family": "C-particles-dataviz",
+   "name": "Точка по пути",
+   "does": "Точка бежит по пунктиру от А к Б",
+   "talking": true,
+   "preview": "/static/previews/mb/C8-dot-along-dashed-path.mp4"
+  },
+  {
+   "id": "C9-fan-videos-circular-orbit",
+   "code": "C9",
+   "family": "C-particles-dataviz",
+   "name": "Веер видео",
+   "does": "Видео-карточки разлетаются по кругу",
+   "talking": false,
+   "preview": "/static/previews/mb/C9-fan-videos-circular-orbit.mp4"
+  },
+  {
+   "id": "D1-camera-dive-focal",
+   "code": "D1",
+   "family": "D-camera-transitions",
+   "name": "Нырок камеры",
+   "does": "Камера влетает в элемент",
+   "talking": true,
+   "preview": "/static/previews/mb/D1-camera-dive-focal.mp4"
+  },
+  {
+   "id": "D10-multiply-card-grid",
+   "code": "D10",
+   "family": "D-camera-transitions",
+   "name": "Размножение карточек",
+   "does": "Одна карточка превращается во много",
+   "talking": false,
+   "preview": "/static/previews/mb/D10-multiply-card-grid.mp4"
+  },
+  {
+   "id": "D14-smash-cut-snap",
+   "code": "D14",
+   "family": "D-camera-transitions",
+   "name": "Смэш-каты",
+   "does": "Четыре резкие склейки с тряской",
+   "talking": true,
+   "preview": "/static/previews/mb/D14-smash-cut-snap.mp4"
+  },
+  {
+   "id": "D2-motion-blur-whip-pan",
+   "code": "D2",
+   "family": "D-camera-transitions",
+   "name": "Вжух",
+   "does": "Резкий смаз-переход",
+   "talking": true,
+   "preview": "/static/previews/mb/D2-motion-blur-whip-pan.mp4"
+  },
+  {
+   "id": "D3-dashed-cord-tether",
+   "code": "D3",
+   "family": "D-camera-transitions",
+   "name": "Пунктирная связь",
+   "does": "Метки связываются пунктиром",
+   "talking": false,
+   "preview": "/static/previews/mb/D3-dashed-cord-tether.mp4"
+  },
+  {
+   "id": "D4-object-swap-out-drop",
+   "code": "D4",
+   "family": "D-camera-transitions",
+   "name": "Замена карточки",
+   "does": "Старая уходит вниз, новая падает сверху",
+   "talking": true,
+   "preview": "/static/previews/mb/D4-object-swap-out-drop.mp4"
+  },
+  {
+   "id": "D5-string-drop-swing",
+   "code": "D5",
+   "family": "D-camera-transitions",
+   "name": "На верёвочке",
+   "does": "Метка спускается на нитке и качается",
+   "talking": false,
+   "preview": "/static/previews/mb/D5-string-drop-swing.mp4"
+  },
+  {
+   "id": "D6-hard-coral-wipe",
+   "code": "D6",
+   "family": "D-camera-transitions",
+   "name": "Шторка",
+   "does": "Цветная панель открывает новую сцену",
+   "talking": true,
+   "preview": "/static/previews/mb/D6-hard-coral-wipe.mp4"
+  },
+  {
+   "id": "D7-funnel-cone-transition",
+   "code": "D7",
+   "family": "D-camera-transitions",
+   "name": "Воронка",
+   "does": "Сцена схлопывается в воронку",
+   "talking": true,
+   "preview": "/static/previews/mb/D7-funnel-cone-transition.mp4"
+  },
+  {
+   "id": "D8-cursor-driven-highlight",
+   "code": "D8",
+   "family": "D-camera-transitions",
+   "name": "Курсор кликает",
+   "does": "Курсор нажимает по карточкам",
+   "talking": false,
+   "preview": "/static/previews/mb/D8-cursor-driven-highlight.mp4"
+  },
+  {
+   "id": "D9-decision-tree-fork",
+   "code": "D9",
+   "family": "D-camera-transitions",
+   "name": "Развилка",
+   "does": "Вопрос делится на ✕ и ✓",
+   "talking": true,
+   "preview": "/static/previews/mb/D9-decision-tree-fork.mp4"
+  },
+  {
+   "id": "E1-warm-grey-backdrop",
+   "code": "E1",
+   "family": "E-lighting-material",
+   "name": "Тёплый студийный фон",
+   "does": "Спокойная подложка",
+   "talking": false,
+   "preview": "/static/previews/mb/E1-warm-grey-backdrop.mp4"
+  },
+  {
+   "id": "E2-pure-black-aura-blob",
+   "code": "E2",
+   "family": "E-lighting-material",
+   "name": "Чёрный фон с аурой",
+   "does": "Дышащие пятна света",
+   "talking": false,
+   "preview": "/static/previews/mb/E2-pure-black-aura-blob.mp4"
+  },
+  {
+   "id": "E3-spotlight-halo",
+   "code": "E3",
+   "family": "E-lighting-material",
+   "name": "Прожектор",
+   "does": "Тёплый ореол вокруг героя",
+   "talking": true,
+   "preview": "/static/previews/mb/E3-spotlight-halo.mp4"
+  },
+  {
+   "id": "E5-perspective-grid-floor",
+   "code": "E5",
+   "family": "E-lighting-material",
+   "name": "Сетка-пол",
+   "does": "Перспективная сетка, как сцена",
+   "talking": false,
+   "preview": "/static/previews/mb/E5-perspective-grid-floor.mp4"
+  },
+  {
+   "id": "E7-crt-tv-vignette",
+   "code": "E7",
+   "family": "E-lighting-material",
+   "name": "Старый телевизор",
+   "does": "Ретро-ТВ с полосами",
+   "talking": false,
+   "preview": "/static/previews/mb/E7-crt-tv-vignette.mp4"
+  },
+  {
+   "id": "E8-dirty-ai-bloom-grain",
+   "code": "E8",
+   "family": "E-lighting-material",
+   "name": "Грязный кино-слой",
+   "does": "Зерно и блики поверх картинки",
+   "talking": true,
+   "preview": "/static/previews/mb/E8-dirty-ai-bloom-grain.mp4"
+  },
+  {
+   "id": "F1-stock-footage-caption-typeon",
+   "code": "F1",
+   "family": "F-mixed-media",
+   "name": "Кино-кадр с подписью",
+   "does": "Сток с наездом и изящной надписью",
+   "talking": true,
+   "preview": "/static/previews/mb/F1-stock-footage-caption-typeon.mp4"
+  },
+  {
+   "id": "F11-founder-narrated-brand-film",
+   "code": "F11",
+   "family": "F-mixed-media",
+   "name": "Бренд-фильм",
+   "does": "Лента-маскот плывёт по кадру",
+   "talking": false,
+   "preview": "/static/previews/mb/F11-founder-narrated-brand-film.mp4"
+  },
+  {
+   "id": "F2-living-mascot",
+   "code": "F2",
+   "family": "F-mixed-media",
+   "name": "Живой маскот",
+   "does": "Персонаж-фигура дышит в кадре",
+   "talking": false,
+   "preview": "/static/previews/mb/F2-living-mascot.mp4"
+  },
+  {
+   "id": "F3-vendor-logo-orbit",
+   "code": "F3",
+   "family": "F-mixed-media",
+   "name": "Логотипы по орбите",
+   "does": "Логотипы кружат вокруг центра",
+   "talking": false,
+   "preview": "/static/previews/mb/F3-vendor-logo-orbit.mp4"
+  },
+  {
+   "id": "F4-cursor-keystroke-badge",
+   "code": "F4",
+   "family": "F-mixed-media",
+   "name": "Курсор и клавиши",
+   "does": "Курсор и нажатые клавиши поверх экрана",
+   "talking": false,
+   "preview": "/static/previews/mb/F4-cursor-keystroke-badge.mp4"
+  },
+  {
+   "id": "F5-ai-model-icon-row",
+   "code": "F5",
+   "family": "F-mixed-media",
+   "name": "Ряд иконок ИИ",
+   "does": "Значки моделей по очереди",
+   "talking": false,
+   "preview": "/static/previews/mb/F5-ai-model-icon-row.mp4"
+  },
+  {
+   "id": "G1-note-row-sequential-fill",
+   "code": "G1",
+   "family": "G-ui-mocks",
+   "name": "Заметки по строкам",
+   "does": "Строки заметок появляются одна за другой",
+   "talking": false,
+   "preview": "/static/previews/mb/G1-note-row-sequential-fill.mp4"
+  },
+  {
+   "id": "G16-cream-chapter-cards",
+   "code": "G16",
+   "family": "G-ui-mocks",
+   "name": "Главы",
+   "does": "Заставки «Часть 1, 2, 3»",
+   "talking": true,
+   "preview": "/static/previews/mb/G16-cream-chapter-cards.mp4"
+  },
+  {
+   "id": "G2-terminal-typing-reveal",
+   "code": "G2",
+   "family": "G-ui-mocks",
+   "name": "Печать в терминале",
+   "does": "Команда и ответ печатаются",
+   "talking": false,
+   "preview": "/static/previews/mb/G2-terminal-typing-reveal.mp4"
+  },
+  {
+   "id": "G23-finder-template-library",
+   "code": "G23",
+   "family": "G-ui-mocks",
+   "name": "Запись экрана в папку",
+   "does": "Видео уменьшается и ложится в окно папки",
+   "talking": false,
+   "preview": "/static/previews/mb/G23-finder-template-library.mp4"
+  },
+  {
+   "id": "G24-repo-file-list",
+   "code": "G24",
+   "family": "G-ui-mocks",
+   "name": "Список файлов",
+   "does": "Список с выделенной строкой",
+   "talking": false,
+   "preview": "/static/previews/mb/G24-repo-file-list.mp4"
+  },
+  {
+   "id": "G25-readme-card",
+   "code": "G25",
+   "family": "G-ui-mocks",
+   "name": "Карточка README",
+   "does": "Описание проекта со значками",
+   "talking": false,
+   "preview": "/static/previews/mb/G25-readme-card.mp4"
+  },
+  {
+   "id": "G26-glow-frame-highlight",
+   "code": "G26",
+   "family": "G-ui-mocks",
+   "name": "Светящаяся рамка",
+   "does": "Главный результат в рамке со свечением",
+   "talking": true,
+   "preview": "/static/previews/mb/G26-glow-frame-highlight.mp4"
+  },
+  {
+   "id": "G27-command-input-typeon",
+   "code": "G27",
+   "family": "G-ui-mocks",
+   "name": "Команда печатается",
+   "does": "Карточка-команда с мигающим курсором",
+   "talking": false,
+   "preview": "/static/previews/mb/G27-command-input-typeon.mp4"
+  },
+  {
+   "id": "G28-vscode-tree-reveal",
+   "code": "G28",
+   "family": "G-ui-mocks",
+   "name": "Дерево файлов",
+   "does": "Боковая панель с файлами",
+   "talking": false,
+   "preview": null
+  },
+  {
+   "id": "G3-progress-bar-fill",
+   "code": "G3",
+   "family": "G-ui-mocks",
+   "name": "Полоса загрузки",
+   "does": "Карточка с прогрессом",
+   "talking": false,
+   "preview": "/static/previews/mb/G3-progress-bar-fill.mp4"
+  },
+  {
+   "id": "G4-card-card-morph",
+   "code": "G4",
+   "family": "G-ui-mocks",
+   "name": "Морф карточек",
+   "does": "Одна карточка превращается в другую",
+   "talking": false,
+   "preview": "/static/previews/mb/G4-card-card-morph.mp4"
+  },
+  {
+   "id": "G5-macos-permission-cursor",
+   "code": "G5",
+   "family": "G-ui-mocks",
+   "name": "Окно разрешения",
+   "does": "Системный диалог и клик",
+   "talking": false,
+   "preview": "/static/previews/mb/G5-macos-permission-cursor.mp4"
+  },
+  {
+   "id": "G7-screen-record-cursor-zoom",
+   "code": "G7",
+   "family": "G-ui-mocks",
+   "name": "Запись экрана с зумом",
+   "does": "Курсор и приближение к важному",
+   "talking": false,
+   "preview": "/static/previews/mb/G7-screen-record-cursor-zoom.mp4"
+  },
+  {
+   "id": "G8-chat-composer-chip",
+   "code": "G8",
+   "family": "G-ui-mocks",
+   "name": "Чат с ИИ",
+   "does": "Вопрос печатается в окне чата",
+   "talking": false,
+   "preview": "/static/previews/mb/G8-chat-composer-chip.mp4"
+  },
+  {
+   "id": "I1-looper-foundation",
+   "code": "I1",
+   "family": "I-loopers",
+   "name": "Медитативная петля",
+   "does": "Чёрно-белые формы плавно меняются",
+   "talking": false,
+   "preview": "/static/previews/mb/I1-looper-foundation.mp4"
+  },
+  {
+   "id": "I2-bw-geometric-morph",
+   "code": "I2",
+   "family": "I-loopers",
+   "name": "Геометрия ч/б",
+   "does": "Круг, квадрат, треугольник перетекают",
+   "talking": false,
+   "preview": "/static/previews/mb/I2-bw-geometric-morph.mp4"
+  },
+  {
+   "id": "I3-hand-drawn-sketch",
+   "code": "I3",
+   "family": "I-loopers",
+   "name": "Рисунок от руки",
+   "does": "Линии рисуются маркером",
+   "talking": true,
+   "preview": "/static/previews/mb/I3-hand-drawn-sketch.mp4"
+  },
+  {
+   "id": "I4-sync-writing-word-icon",
+   "code": "I4",
+   "family": "I-loopers",
+   "name": "Слово + иконка",
+   "does": "Каждое слово со своей иконкой",
+   "talking": true,
+   "preview": "/static/previews/mb/I4-sync-writing-word-icon.mp4"
+  },
+  {
+   "id": "I5-bw-single-accent",
+   "code": "I5",
+   "family": "I-loopers",
+   "name": "Одно слово цветом",
+   "does": "Ч/б фраза, одно слово в цвете",
+   "talking": true,
+   "preview": "/static/previews/mb/I5-bw-single-accent.mp4"
+  },
+  {
+   "id": "I6-slow-contemplative-pace",
+   "code": "I6",
+   "family": "I-loopers",
+   "name": "Медленный темп",
+   "does": "Эталон спокойного ритма",
+   "talking": false,
+   "preview": "/static/previews/mb/I6-slow-contemplative-pace.mp4"
+  },
+  {
+   "id": "I7-hand-drawn-annotations",
+   "code": "I7",
+   "family": "I-loopers",
+   "name": "Пометки от руки",
+   "does": "Красные пометки поверх цитаты",
+   "talking": true,
+   "preview": "/static/previews/mb/I7-hand-drawn-annotations.mp4"
+  },
+  {
+   "id": "I9-iconography-hook",
+   "code": "I9",
+   "family": "I-loopers",
+   "name": "Символ-хук",
+   "does": "Большая иконка эффектно влетает",
+   "talking": true,
+   "preview": "/static/previews/mb/I9-iconography-hook.mp4"
+  },
+  {
+   "id": "J1-hormozi-burst-sync",
+   "code": "J1",
+   "family": "J-captions",
+   "name": "Крупные субтитры",
+   "does": "Жирные слова по одному",
+   "talking": true,
+   "preview": "/static/previews/mb/J1-hormozi-burst-sync.mp4"
+  },
+  {
+   "id": "J2-dual-typography-stack",
+   "code": "J2",
+   "family": "J-captions",
+   "name": "Две строки субтитров",
+   "does": "Белая строка и жёлтая под ней",
+   "talking": true,
+   "preview": "/static/previews/mb/J2-dual-typography-stack.mp4"
+  },
+  {
+   "id": "J3-sticky-url-footer",
+   "code": "J3",
+   "family": "J-captions",
+   "name": "Плашка-ссылка внизу",
+   "does": "Постоянный адрес или ник",
+   "talking": false,
+   "preview": "/static/previews/mb/J3-sticky-url-footer.mp4"
+  },
+  {
+   "id": "J4-twitter-post-like-animation",
+   "code": "J4",
+   "family": "J-captions",
+   "name": "Пост из X",
+   "does": "Карточки постов влетают и лайкаются",
+   "talking": false,
+   "preview": "/static/previews/mb/J4-twitter-post-like-animation.mp4"
+  },
+  {
+   "id": "J5-word-stream-whisper-sync",
+   "code": "J5",
+   "family": "J-captions",
+   "name": "Поток слов",
+   "does": "Строка из 1-2 слов в такт речи",
+   "talking": true,
+   "preview": "/static/previews/mb/J5-word-stream-whisper-sync.mp4"
+  },
+  {
+   "id": "K1-vertical-5050-stacked",
+   "code": "K1",
+   "family": "K-split-screen",
+   "name": "Сплит 50/50",
+   "does": "Экран пополам: сверху пример, снизу ты",
+   "talking": true,
+   "preview": "/static/previews/mb/K1-vertical-5050-stacked.mp4"
+  },
+  {
+   "id": "K2-pip-corner",
+   "code": "K2",
+   "family": "K-split-screen",
+   "name": "Лицо в углу",
+   "does": "Экран на весь кадр, ты в уголке",
+   "talking": true,
+   "preview": "/static/previews/mb/K2-pip-corner.mp4"
+  },
+  {
+   "id": "K3-overlap-card-avatar",
+   "code": "K3",
+   "family": "K-split-screen",
+   "name": "Голова поверх карточки",
+   "does": "Голова выходит за край карточки",
+   "talking": true,
+   "preview": "/static/previews/mb/K3-overlap-card-avatar.mp4"
+  },
+  {
+   "id": "K5-continuous-anchor-reel",
+   "code": "K5",
+   "family": "K-split-screen",
+   "name": "Ведущий через весь ролик",
+   "does": "Ты в кадре всё время, вокруг меняются сцены",
+   "talking": true,
+   "preview": null
+  },
+  {
+   "id": "L1-marker-circle",
+   "code": "L1",
+   "family": "L-hand-drawn",
+   "name": "Рукописный круг",
+   "does": "Маркер обводит важное",
+   "talking": true,
+   "preview": "/static/previews/mb/L1-marker-circle.mp4"
+  },
+  {
+   "id": "L2-handdrawn-arrow",
+   "code": "L2",
+   "family": "L-hand-drawn",
+   "name": "Рукописная стрелка",
+   "does": "Стрелка указывает на главное",
+   "talking": true,
+   "preview": "/static/previews/mb/L2-handdrawn-arrow.mp4"
+  },
+  {
+   "id": "L3-underline-scribble",
+   "code": "L3",
+   "family": "L-hand-drawn",
+   "name": "Каракули",
+   "does": "Небрежное подчёркивание",
+   "talking": true,
+   "preview": "/static/previews/mb/L3-underline-scribble.mp4"
+  },
+  {
+   "id": "M1-stripe-dashboard-reveal",
+   "code": "M1",
+   "family": "M-proof-aesthetic",
+   "name": "Доход на экране",
+   "does": "Панель платежей как доказательство",
+   "talking": false,
+   "preview": "/static/previews/mb/M1-stripe-dashboard-reveal.mp4"
+  },
+  {
+   "id": "M2-before-after-split",
+   "code": "M2",
+   "family": "M-proof-aesthetic",
+   "name": "До и после",
+   "does": "Было и стало пополам",
+   "talking": true,
+   "preview": "/static/previews/mb/M2-before-after-split.mp4"
+  },
+  {
+   "id": "N1-single-asset-micro-jitter-duplication",
+   "code": "N1",
+   "family": "N-replicator",
+   "name": "Размножение предмета",
+   "does": "Один предмет дрожит и множится",
+   "talking": false,
+   "preview": "/static/previews/mb/N1-single-asset-micro-jitter-duplication.mp4"
+  },
+  {
+   "id": "O1-cartoon-character-entrance",
+   "code": "O1",
+   "family": "O-character-storytelling",
+   "name": "Мультяшный ведущий",
+   "does": "Персонаж-маскот выходит в кадр",
+   "talking": false,
+   "preview": "/static/previews/mb/O1-cartoon-character-entrance.mp4"
+  },
+  {
+   "id": "O2-cardflip-paid-free-swap",
+   "code": "O2",
+   "family": "O-character-storytelling",
+   "name": "Карточки-перевёртыши",
+   "does": "Ярлыки быстро меняются",
+   "talking": true,
+   "preview": "/static/previews/mb/O2-cardflip-paid-free-swap.mp4"
+  },
+  {
+   "id": "O3-claude-character-upload",
+   "code": "O3",
+   "family": "O-character-storytelling",
+   "name": "Демо продукта",
+   "does": "Длинная анимация работы приложения",
+   "talking": false,
+   "preview": "/static/previews/mb/O3-claude-character-upload.mp4"
+  },
+  {
+   "id": "O4-instagram-follow-explosion",
+   "code": "O4",
+   "family": "O-character-storytelling",
+   "name": "Профиль и подписчики",
+   "does": "Счётчик подписчиков взрывается",
+   "talking": false,
+   "preview": "/static/previews/mb/O4-instagram-follow-explosion.mp4"
+  },
+  {
+   "id": "O5-plane-flight-route-map",
+   "code": "O5",
+   "family": "O-character-storytelling",
+   "name": "Маршрут на карте",
+   "does": "Самолёт летит между городами",
+   "talking": true,
+   "preview": "/static/previews/mb/O5-plane-flight-route-map.mp4"
+  },
+  {
+   "id": "O6-avatar-feathered-fill",
+   "code": "O6",
+   "family": "O-character-storytelling",
+   "name": "Мягкое лицо снизу",
+   "does": "Лицо с размытыми краями над фоном",
+   "talking": true,
+   "preview": "/static/previews/mb/O6-avatar-feathered-fill.mp4"
+  },
+  {
+   "id": "P1-editorial-poster",
+   "code": "P1",
+   "family": "P-niche-signature",
+   "name": "Редакционный постер",
+   "does": "Кадр как обложка журнала",
+   "talking": true,
+   "preview": "/static/previews/mb/P1-editorial-poster.mp4"
+  },
+  {
+   "id": "P2-anti-clean-aesthetic",
+   "code": "P2",
+   "family": "P-niche-signature",
+   "name": "Живая неидеальность",
+   "does": "Зерно, царапины, неровности поверх",
+   "talking": true,
+   "preview": "/static/previews/mb/P2-anti-clean-aesthetic.mp4"
+  }
+ ],
+ "families": {
+  "A-typography": "Текст",
+  "B-3d-objects": "Объёмные карточки",
+  "C-particles-dataviz": "Частицы и цифры",
+  "D-camera-transitions": "Переходы",
+  "E-lighting-material": "Свет и фон",
+  "F-mixed-media": "Смешанные",
+  "G-ui-mocks": "Интерфейсы",
+  "I-loopers": "Медитативные",
+  "J-captions": "Субтитры",
+  "K-split-screen": "Сплиты",
+  "L-hand-drawn": "От руки",
+  "M-proof-aesthetic": "Доказательства",
+  "N-replicator": "Размножение",
+  "O-character-storytelling": "Персонажи",
+  "P-niche-signature": "Фактура"
+ }
+}
